@@ -1,0 +1,63 @@
+--To check all the columns names in my data.
+--To check the data types in my data.
+SELECT*
+FROM CASESTUDY.SALES.COFFEE_SHOP
+LIMIT 12;
+--------------------------------------------------------------------------------------------------
+     ----Explaratory Data Analysis---
+---I want to check my categorical columns
+SELECT DISTINCT store_location
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+
+SELECT DISTINCT PRODUCT_CATEGORY
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+
+SELECT DISTINCT PRODUCT_TYPE
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+
+SELECT DISTINCT PRODUCT_DETAIL
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+---------------------------------------------------------------------------------------------------
+          ---Date and Time Functions---
+SELECT MIN(TRANSACTION_DATE) AS FIRST_OPERATING_DATE
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+
+SELECT MAX(TRANSACTION_DATE) AS LAST_OPERATING_DATE
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+
+SELECT MIN(TRANSACTION_TIME) AS OPENING_HOUR
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+
+SELECT MAX(TRANSACTION_TIME) AS CLOSING_HOUR
+FROM CASESTUDY.SALES.COFFEE_SHOP;
+-----------------------------------------------------------------------------------------------
+SELECT TRANSACTION_DATE,
+DAYNAME(TRANSACTION_DATE) AS DAY_NAME,
+CASE
+    WHEN DAY_NAME IN ('Sun','Sat') THEN ('Weekend')
+     ELSE 'Weekday'
+     END AS DAY_CLASSIFICATION,
+      MONTHNAME(TRANSACTION_DATE) AS MONTH_NAME,
+
+---TRANSACTION_TIME,
+CASE
+     WHEN TRANSACTION_TIME BETWEEN '06:00:00' AND '11:59:59' THEN 'Morning'
+     WHEN TRANSACTION_TIME BETWEEN '12:00:00' AND '16:59:59' THEN 'Afternoon'
+     WHEN TRANSACTION_TIME >= '17:00:00' THEN 'Evening'
+   END AS TIME_BUCKET,  
+     
+HOUR(TRANSACTION_TIME) AS HOUR_OF_DAY,
+
+----CATEGORICAL DATA
+STORE_LOCATION,
+PRODUCT_CATEGORY,
+PRODUCT_TYPE,
+PRODUCT_DETAIL,
+---UNIT_PRICE,
+----TRANSACTION_QTY,
+
+        COUNT(DISTINCT TRANSACTION_ID) AS NUMBER_OF_SALES,
+        SUM(TRANSACTION_QTY * UNIT_PRICE) AS REVENUE
+FROM CASESTUDY.SALES.COFFEE_SHOP
+GROUP BY ALL;
+--------------------------------------------------------------------------------------------------
