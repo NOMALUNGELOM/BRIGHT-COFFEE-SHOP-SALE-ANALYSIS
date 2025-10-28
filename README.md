@@ -21,10 +21,10 @@ Provide recommendations to increase sales and improve operations
 
 # 3. Tools Used
 
-Snowflake – Data cleaning, transformation, and analysis
+- Snowflake – Data cleaning, transformation, and analysis
 
-Excel – Pivot tables, charts, and dashboard creation
+- Excel – Pivot tables, charts, and dashboard creation
 
-Miro – Data flow and architecture planning
+-Miro – Data flow and architecture planning
 
 PowerPoint – Presentation of final insights
