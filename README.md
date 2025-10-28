@@ -11,13 +11,13 @@ As a Junior Data Analyst, my task was to analyze this data using SQL and Excel t
 
 # 2. Objectives
 
-Identify products that generate the most revenue
+- Identify products that generate the most revenue
 
-Find the time of day when the store performs best
+- Find the time of day when the store performs best
 
-Analyze sales patterns across products and time intervals
+- Analyze sales patterns across products and time intervals
 
-Provide recommendations to increase sales and improve operations
+- Provide recommendations to increase sales and improve operations
 
 # 3. Tools Used
 
@@ -25,6 +25,6 @@ Provide recommendations to increase sales and improve operations
 
 - Excel – Pivot tables, charts, and dashboard creation
 
--Miro – Data flow and architecture planning
+- Miro – Data flow and architecture planning
 
-PowerPoint – Presentation of final insights
+- PowerPoint – Presentation of final insights
